@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>fUNICODE - Fancy Text & Unicode Styler (70+ Styles) by @ChrisPirillo</title>
+    <meta name="description" content="fUNICODE by @ChrisPirillo: Instantly transform your text with 70+ unique Unicode styles! Create fancy fonts, cool text effects, and stylized text for social media, bios, and messages. Easy copy-on-select.">
+    <meta name="keywords" content="funicode, chris pirillo, unicode text generator, fancy text, cool fonts, text styler, unicode converter, text effects, social media fonts, instagram bio fonts, twitter fonts, copy paste fonts, online text transformer, weird text, crazy text, symbol text generator, phonetic alphabet, zalgo text">
+    <link rel="canonical" href="https://pirillo.com/arcade/funicode.html"> 
+    
+    <meta property="og:title" content="fUNICODE - Fancy Text & Unicode Styler (70+ Styles) by @ChrisPirillo">
+    <meta property="og:description" content="fUNICODE by @ChrisPirillo: Instantly transform text with 70+ unique Unicode styles for social media, bios, and messages. Features compact rows and easy copy-on-select.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pirillo.com/arcade/funicode.html"> 
+    <meta property="og:image" content="https://pirillo.com/arcade/images/funicode.png">
+    <meta property="og:image:alt" content="fUNICODE - Unicode Text Styler & Fancy Font Generator Interface by @ChrisPirillo - v15">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="fUNICODE - Fancy Text & Unicode Styler (70+ Styles) by @ChrisPirillo">
+    <meta name="twitter:description" content="70+ unique Unicode text styles for standout social media posts and messages with fUNICODE by @ChrisPirillo. Compact design, click-to-copy.">
+    <meta name="twitter:image" content="https://pirillo.com/arcade/images/funicode.png">
+
+    <meta name="theme-color" content="#0EA5E9" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F172A" media="(prefers-color-scheme: dark)">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // FOUC Prevention Script: Apply theme immediately
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-light': '#0EA5E9', 'secondary-light': '#10B981', 'background-light': '#F8FAFC', 
+                        'text-light': '#1E293B', 'card-light': '#FFFFFF', 'border-light': '#E2E8F0',
+                        'header-bg-light': '#FFFFFF', 'header-text-light': '#0F172A',
+                        'row-preview-bg-light': '#E0F2FE', 
+                        'row-preview-text-light': '#0C4A6E', 
+                        'copy-all-bg-light': '#0369A1', 
+                        'copy-all-hover-bg-light': '#0284C7',
+                        'menu-bg-light': '#FFFFFF',
+                        'menu-border-light': '#D1D5DB', 
+                        'menu-text-light': '#374151', 
+                        'menu-hover-bg-light': '#F3F4F6', 
+                        'sticky-input-bg-light': 'rgba(248, 250, 252, 0.85)', // Light theme sticky bg with alpha
+
+                        'primary-dark': '#38BDF8', 'secondary-dark': '#34D399', 'background-dark': '#0F172A',
+                        'text-dark': '#E2E8F0', 'card-dark': '#1E293B', 'border-dark': '#334155',
+                        'header-bg-dark': 'rgba(15, 23, 42, 0.85)', 'header-text-dark': '#F8FAFC',
+                        'row-preview-bg-dark': '#293548', 
+                        'row-preview-text-dark': '#CBD5E1', 
+                        'copy-all-bg-dark': '#0EA5E9', 
+                        'copy-all-hover-bg-dark': '#38BDF8', 
+                        'menu-bg-dark': '#1F2937', 
+                        'menu-border-dark': '#4B5563', 
+                        'menu-text-dark': '#D1D5DB', 
+                        'menu-hover-bg-dark': '#374151', 
+                        'sticky-input-bg-dark': 'rgba(15, 23, 42, 0.85)', // Dark theme sticky bg with alpha
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "fUNICODE - Unicode Text Styler & Fancy Font Generator by @ChrisPirillo",
+      "description": "Transform plain text into over 70 unique Unicode styles for social media, bios, and messages. Easy copy-on-select functionality. From @ChrisPirillo.",
+      "applicationCategory": "TextProcessingTool",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires HTML5, CSS3, and JavaScript.",
+      "author": {
+        "@type": "Person",
+        "name": "Chris Pirillo",
+        "url": "https://chris.pirillo.com/"
+      },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "url": "https://pirillo.com/arcade/funicode.html", 
+      "keywords": "funicode, chris pirillo, unicode, text transformer, font generator, fancy text, cool fonts, text styler, social media fonts, copy paste fonts, weird text, symbol text generator, crazy text generator, phonetic alphabet generator, zalgo generator"
+    }
+    </script>
+
+    <style>
+        :root {
+            --font-sans: 'Inter', sans-serif; --font-heading: 'Outfit', sans-serif;
+            --bg-color: #F8FAFC; --text-color: #1E293B; --card-bg-color: #FFFFFF;
+            --border-color: #E2E8F0; --primary-color: #0EA5E9; --secondary-color: #10B981;
+            --header-bg-color: #FFFFFF; --header-text-color: #0F172A;
+            --row-preview-bg: #E0F2FE; --row-preview-text: #0C4A6E;
+            --copy-all-bg: #0369A1; --copy-all-hover-bg: #0284C7;
+            --menu-bg: #FFFFFF; --menu-border: #D1D5DB; --menu-text: #374151; --menu-hover-bg: #F3F4F6;
+            --header-height: 5rem; /* 80px, matches h-20 */
+            --sticky-input-bg-color: rgba(248, 250, 252, 0.85); 
+        }
+        .dark {
+            --bg-color: #0F172A; --text-color: #E2E8F0; --card-bg-color: #1E293B;
+            --border-color: #334155; --primary-color: #38BDF8; --secondary-dark: #34D399;
+            --header-bg-color: rgba(15, 23, 42, 0.85); --header-text-color: #F8FAFC;
+            --row-preview-bg: #293548; --row-preview-text: #CBD5E1;
+            --copy-all-bg: #0EA5E9; --copy-all-hover-bg: #38BDF8;
+            --menu-bg: #1F2937; --menu-border: #4B5563; --menu-text: #D1D5DB; --menu-hover-bg: #374151;
+            --sticky-input-bg-color: rgba(15, 23, 42, 0.85); 
+        }
+        body { font-family: var(--font-sans); transition: background-color 0.3s ease, color 0.3s ease; margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        *, *::before, *::after { box-sizing: inherit; }
+        .app-container { display: flex; flex-direction: column; min-height: 100vh; }
+        .main-content-wrapper { flex-grow: 1; padding-top: var(--header-height); } 
+        
+        #input-section-container { 
+            position: sticky; 
+            top: var(--header-height); 
+            z-index: 40; 
+            padding-top: 0.75rem; /* Reduced initial padding-top (pt-3) */
+            padding-bottom: 0.5rem; 
+            transition: padding-top 0.2s ease-in-out, padding-bottom 0.2s ease-in-out, background-color 0.3s ease, box-shadow 0.2s ease-in-out;
+            background-color: var(--sticky-input-bg-color); 
+            backdrop-filter: blur(8px); 
+            -webkit-backdrop-filter: blur(8px); 
+        }
+        .sticky-input-active { /* Applied when input section is stuck */
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+             padding-top: 0.5rem !important; 
+             padding-bottom: 0.25rem !important; /* Further tightened bottom padding when sticky */
+        }
+        #text-input {
+            transition: height 0.2s ease-in-out, padding 0.2s ease-in-out;
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+        textarea:focus-visible, button:focus-visible, [role="button"]:focus-visible, a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 2px; border-radius: 0.25rem; }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        .dark ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        ::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 20px; border: 2px solid var(--bg-color); }
+        ::-webkit-scrollbar-thumb:hover { background-color: var(--primary-color); }
+        .dark #theme-icon-sun { display: none; } .dark #theme-icon-moon { display: inline-block; }
+        html:not(.dark) #theme-icon-sun { display: inline-block; } html:not(.dark) #theme-icon-moon { display: none; }
+        #toast-notification { z-index: 100; }
+        .transformed-text-row-preview { -ms-overflow-style: none; scrollbar-width: none; cursor: pointer; }
+        .transformed-text-row-preview::-webkit-scrollbar { display: none; }
+        .output-row:hover .transformed-text-row-preview { border-color: var(--primary-color); }
+        .chris-menu { min-width: 180px; z-index: 60; }
+        .chris-menu a { transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans">
+    <div id="app-container" class="app-container">
+        <header class="sticky top-0 z-50 bg-header-bg-light dark:bg-header-bg-dark dark:backdrop-blur-md shadow-lg transition-colors duration-300 ease-in-out h-[var(--header-height)]">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
+                <h1 class="text-3xl sm:text-4xl font-bold text-header-text-light dark:text-header-text-dark">
+                    <span class="text-primary-light dark:text-primary-dark">f</span>UNICODE
+                </h1>
+                <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2.5 rounded-full text-text-light/80 dark:text-text-dark/80 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-all duration-200">
+                    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+            </div>
+        </header>
+        
+        <div class="main-content-wrapper">
+            <div id="input-section-container" class="bg-sticky-input-bg-light dark:bg-sticky-input-bg-dark"> 
+                <section id="input-section" aria-label="Text Input Area" class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <textarea id="text-input" rows="3"
+                              class="w-full p-3.5 border-2 border-border-light dark:border-border-dark rounded-xl shadow-sm focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-primary-light dark:focus:border-primary-dark bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark placeholder-slate-400 dark:placeholder-slate-500 resize-y transition-all duration-200 text-base"
+                              placeholder="Type or paste text here..."
+                              aria-label="Text input for transformation"></textarea>
+                </section>
+            </div>
+
+            <main role="main" class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <section id="output-section" aria-labelledby="output-heading-main">
+                    <div id="output-header-controls" class="hidden">
+                        <h2 id="output-heading-main" class="text-2xl font-semibold text-text-light dark:text-text-dark">Transformed Styles</h2>
+                        <p class="text-sm text-text-light/70 dark:text-text-dark/70 mb-5">Select any transformed text to copy it.</p>
+                    </div>
+                    <div id="output-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2.5">
+                        {/* Transformed text rows will be dynamically inserted here */}
+                    </div>
+                    <div id="copy-all-container" class="mt-8 text-center hidden">
+                        <button id="copy-all-button" class="bg-copy-all-bg-light dark:bg-copy-all-bg-dark hover:bg-copy-all-hover-bg-light dark:hover:bg-copy-all-hover-bg-dark text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-in-out text-base">
+                            Copy All Transformed Text
+                        </button>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <footer class="text-center py-8 mt-auto border-t-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark transition-colors duration-300 ease-in-out">
+            <p id="footer-promo" class="text-sm text-text-light/90 dark:text-text-dark/90">
+                Discover unique text styles. Copy and paste fancy fonts for social media, bios, and more.
+            </p>
+            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">
+                Free online Unicode text styler &amp; cool font generator from 
+                <div class="relative inline-block text-left">
+                     <button type="button" id="chris-footer-menu-button" class="text-primary-light dark:text-primary-dark hover:opacity-80 transition-opacity font-semibold" aria-expanded="false" aria-haspopup="true">
+                        @ChrisPirillo
+                    </button>.
+                    <div id="chris-footer-menu" class="chris-menu hidden origin-bottom-center sm:origin-bottom-left absolute bottom-full mb-2 w-56 rounded-md shadow-2xl bg-menu-bg-light dark:bg-menu-bg-dark ring-1 ring-menu-border-light dark:ring-menu-border-dark focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="chris-footer-menu-button" tabindex="-1">
+                         <div class="py-1" role="none">
+                            <a href="https://chrispirillo.bio.link/" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Follow Chris</a>
+                            <a href="#" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Hire Chris</a>
+                            <a href="/" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Meet Chris</a>
+                            <a href="https://chrispirillo.substack.com/" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Read Chris</a>
+                            <a href="/arcade/" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Play with Chris</a>
+                            <a href="https://www.linkedin.com/in/chrispirillo/" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Connect with Chris</a>
+                            <a href="https://discord.com/invite/XRBTM8sAMX" target="_blank" class="text-menu-text-light dark:text-menu-text-dark hover:bg-menu-hover-bg-light dark:hover:bg-menu-hover-bg-dark block px-4 py-2 text-sm" role="menuitem" tabindex="-1">Chat with Chris</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="toast-notification" aria-live="polite" aria-atomic="true" class="fixed bottom-6 right-6 p-3.5 text-white rounded-lg shadow-2xl opacity-0 transform translate-y-4 transition-all duration-300 ease-out pointer-events-none text-sm font-medium">
+        Copied to clipboard!
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("fUNICODE script loaded and DOMContentLoaded.");
+
+            const textInput = document.getElementById('text-input');
+            const outputGrid = document.getElementById('output-grid');
+            const outputHeaderControls = document.getElementById('output-header-controls');
+            const copyAllContainer = document.getElementById('copy-all-container');
+            const copyAllButton = document.getElementById('copy-all-button');
+            const headerSubtitle = document.getElementById('header-subtitle');
+            const footerPromo = document.getElementById('footer-promo');
+            const inputSectionContainer = document.getElementById('input-section-container');
+
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIconSun = document.getElementById('theme-icon-sun');
+            const themeIconMoon = document.getElementById('theme-icon-moon');
+            const toastNotification = document.getElementById('toast-notification');
+
+            const chrisFooterMenuButton = document.getElementById('chris-footer-menu-button');
+            const chrisFooterMenu = document.getElementById('chris-footer-menu');
+
+            function mapChars(text, charMap) { return text.split('').map(char => charMap[char] || char).join(''); }
+            function suffixChars(text, suffix) { return text.split('').map(char => char === ' ' ? ' ' : char + suffix).join(''); }
+            function intersperseChars(text, separator) {
+                if (!text) return '';
+                let result = '';
+                let currentWord = '';
+                for (let i = 0; i < text.length; i++) {
+                    const char = text[i];
+                    if (char === ' ' || char === '\t' || char === '\n' || char === '\r') {
+                        if (currentWord.length > 0) {
+                            result += currentWord.split('').join(separator);
+                            currentWord = '';
+                        }
+                        result += char; 
+                    } else {
+                        currentWord += char;
+                    }
+                }
+                if (currentWord.length > 0) { 
+                    result += currentWord.split('').join(separator);
+                }
+                return result;
+            }
+            function prefixSuffixChars(text, prefix, suffix) { return text.split('').map(char => char === ' ' ? ' ' : prefix + char + suffix).join(''); }
+            function prefixSuffixAll(text, prefix, suffix) { return text.match(/^\s*$/) ? text : prefix + text + suffix; }
+            function zalgo(text, up, mid, down) {
+                const zalgoUp = ['\u030d', '\u030e', '\u0304', '\u0305', '\u033f', '\u0311', '\u0306', '\u0310', '\u0352', '\u0357', '\u0351', '\u0307', '\u0308', '\u030a', '\u0342', '\u0343', '\u0344', '\u034a', '\u034b', '\u034c', '\u0303', '\u0302', '\u030c', '\u0350', '\u0300', '\u0301', '\u030b', '\u030f', '\u0312', '\u0313', '\u0314', '\u033d', '\u0309', '\u0363', '\u0364', '\u0365', '\u0366', '\u0367', '\u0368', '\u0369', '\u036a', '\u036b', '\u036c', '\u036d', '\u036e', '\u036f', '\u033e', '\u035b', '\u0346', '\u031a'];
+                const zalgoMid = ['\u0315', '\u031b', '\u0340', '\u0341', '\u0358', '\u0321', '\u0322', '\u0327', '\u0328', '\u0334', '\u0335', '\u0336', '\u034f', '\u035c', '\u035d', '\u035e', '\u035f', '\u0360', '\u0361', '\u0362', '\u0338', '\u0337', '\u0362', '\u0489'];
+                const zalgoDown = ['\u0316', '\u0317', '\u0318', '\u0319', '\u031c', '\u031d', '\u031e', '\u031f', '\u0320', '\u0324', '\u0325', '\u0326', '\u0329', '\u032a', '\u032b', '\u032c', '\u032d', '\u032e', '\u032f', '\u0330', '\u0331', '\u0332', '\u0333', '\u0339', '\u033a', '\u033b', '\u033c', '\u0345', '\u0347', '\u0348', '\u0349', '\u0353', '\u0354', '\u0355', '\u0356', '\u0359', '\u035a', '\u0323'];
+                
+                let result = '';
+                for (let char of text) {
+                    if (char === ' ') { result += ' '; continue; }
+                    result += char;
+                    for (let i = 0; i < up; i++) result += zalgoUp[Math.floor(Math.random() * zalgoUp.length)];
+                    for (let i = 0; i < mid; i++) result += zalgoMid[Math.floor(Math.random() * zalgoMid.length)];
+                    for (let i = 0; i < down; i++) result += zalgoDown[Math.floor(Math.random() * zalgoDown.length)];
+                }
+                return result;
+            }
+
+
+            let transformations = [
+                { name: "Acute Above", transform: text => suffixChars(text, '\u0301') },
+                { name: "Ancient Glyphs (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'∀','b':'ϐ','c':'☾','d':'δ','e':'ϵ','f':'ϝ','g':'γ','h':'н','i':'ι','j':'ϳ','k':'κ','l':'λ','m':'ϻ','n':'ν','o':'ο','p':'π','q':'ϙ','r':'ρ','s':'σ','t':'τ','u':'υ','v':'ν','w':'ω','x':'χ','y':'ψ','z':'ζ'})},
+                { name: "Ant Trail", transform: text => intersperseChars(text, '🐜') },
+                { name: "Archaic Roman", transform: text => mapChars(text.toUpperCase(), {'A':'𐌀','B':'𐌁','C':'𐌂','D':'𐌃','E':'𐌄','F':'𐌅','G':'𐌂','H':'𐌇','I':'𐌉','K':'𐌊','L':'𐌋','M':'𐌌','N':'𐌍','O':'𐌏','P':'𐌐','Q':'𐌒','R':'𐌓','S':'𐌔','T':'𐌕','V':'𐌖','X':'𐌗','Z':'𐌆'})},
+                { name: "Armenian Lookalikes (Faux)", transform: text => mapChars(text, {'A':'Ա','B':'Յ','C':'Շ','D':'<y_bin_209>','E':'Є','F':'Բ','G':'Ց','H':'Њ','I':'Ι','J':'<y_bin_736>','K':'Ҡ','L':'Լ','M':'Μ','N':'Ν','O':'Ο','P':'Ρ','Q':'Զ','R':'Ի','S':'Ѕ','T':'Τ','U':'Ս','V':'Ѵ','W':'Ԝ','X':'Χ','Y':'Ү','Z':'Ζ','a':'ա','b':'в','c':'с','d':'ԁ','e':'е','f':'բ','g':'ց','h':'һ','i':'і','j':'ј','k':'к','l':'լ','m':'м','n':'ո','o':'օ','p':'р','q':'զ','r':'ր','s':'ѕ','t':'т','u':'ս','v':'ν','w':'ԝ','x':'х','y':'у','z':'ż'})},
+                { name: "Backwards", transform: text => text.split('').reverse().join('') },
+                { name: "Black Bubble", transform: text => mapChars(text, {'A':'🅐','B':'🅑','C':'🅒','D':'🅓','E':'🅔','F':'🅕','G':'🅖','H':'🅗','I':'🅘','J':'🅙','K':'🅚','L':'🅛','M':'🅜','N':'🅝','O':'🅞','P':'🅟','Q':'🅠','R':'🅡','S':'🅢','T':'🅣','U':'🅤','V':'🅥','W':'🅦','X':'🅧','Y':'🅨','Z':'🅩','a':'ⓐ','b':'ⓑ','c':'ⓒ','d':'ⓓ','e':'ⓔ','f':'ⓕ','g':'ⓖ','h':'ⓗ','i':'ⓘ','j':'ⓙ','k':'ⓚ','l':'ⓛ','m':'ⓜ','n':'ⓝ','o':'ⓞ','p':'ⓟ','q':'ⓠ','r':'ⓡ','s':'ⓢ','t':'ⓣ','u':'ⓤ','v':'ⓥ','w':'ⓦ','x':'ⓧ','y':'ⓨ','z':'ⓩ','0':'⓿','1':'❶','2':'❷','3':'❸','4':'❹','5':'❺','6':'❻','7':'❼','8':'❽','9':'❾'})},
+                { name: "Blackboard Bold (Partial)", transform: text => mapChars(text, {'C':'ℂ','H':'ℍ','N':'ℕ','P':'ℙ','Q':'ℚ','R':'ℝ','Z':'ℤ'})},
+                { name: "Bold (Math)", transform: text => mapChars(text, {'A':'𝐀','B':'𝐁','C':'𝐂','D':'𝐃','E':'𝐄','F':'𝐅','G':'𝐆','H':'𝐇','I':'𝐈','J':'𝐉','K':'𝐊','L':'𝐋','M':'𝐌','N':'𝐍','O':'𝐎','P':'𝐏','Q':'𝐐','R':'𝐑','S':'𝐒','T':'𝐓','U':'𝐔','V':'𝐕','W':'𝐖','X':'𝐗','Y':'𝐘','Z':'𝐙','a':'𝐚','b':'𝐛','c':'𝐜','d':'𝐝','e':'𝐞','f':'𝐟','g':'𝐠','h':'𝐡','i':'𝐢','j':'𝐣','k':'𝐤','l':'𝐥','m':'𝐦','n':'𝐧','o':'𝐨','p':'𝐩','q':'𝐪','r':'𝐫','s':'𝐬','t':'𝐭','u':'𝐮','v':'𝐯','w':'𝐰','x':'𝐱','y':'𝐲','z':'𝐳','0':'𝟎','1':'𝟏','2':'𝟐','3':'𝟑','4':'𝟒','5':'𝟓','6':'𝟔','7':'𝟕','8':'𝟖','9':'𝟗'})},
+                { name: "Bold Fraktur", transform: text => mapChars(text, {'A':'𝕬','B':'𝕭','C':'𝕮','D':'𝕯','E':'𝕰','F':'𝕱','G':'𝕲','H':'𝕳','I':'𝕴','J':'𝕵','K':'𝕶','L':'𝕷','M':'𝕸','N':'𝕹','O':'𝕺','P':'𝕻','Q':'𝕼','R':'𝕽','S':'𝕾','T':'𝕿','U':'𝖀','V':'𝖁','W':'𝖂','X':'𝖃','Y':'𝖄','Z':'𝖅','a':'𝖆','b':'𝖇','c':'𝖈','d':'𝖉','e':'𝖊','f':'𝖋','g':'𝖌','h':'𝖍','i':'𝖎','j':'𝖏','k':'𝖐','l':'𝖑','m':'𝖒','n':'𝖓','o':'𝖔','p':'𝖕','q':'𝖖','r':'𝖗','s':'𝖘','t':'𝖙','u':'𝖚','v':'𝖛','w':'𝖜','x':'𝖝','y':'𝖞','z':'𝖟'})},
+                { name: "Bold Italic (Math)", transform: text => mapChars(text, {'A':'𝑨','B':'𝑩','C':'𝑪','D':'𝑫','E':'𝑬','F':'𝑭','G':'𝑮','H':'𝑯','I':'𝑰','J':'𝑱','K':'𝑲','L':'𝑳','M':'𝑴','N':'𝑵','O':'𝑶','P':'𝑷','Q':'𝑸','R':'𝑹','S':'𝑺','T':'𝑻','U':'𝑼','V':'𝑽','W':'𝑾','X':'𝑿','Y':'𝒀','Z':'𝒁','a':'𝒂','b':'𝒃','c':'𝒄','d':'𝒅','e':'𝒆','f':'𝒇','g':'𝒈','h':'𝒉','i':'𝒊','j':'𝒋','k':'𝒌','l':'𝒍','m':'𝒎','n':'𝒏','o':'𝒐','p':'𝒑','q':'𝒒','r':'𝒓','s':'𝒔','t':'𝒕','u':'𝒖','v':'𝒗','w':'𝒘','x':'𝒙','y':'𝒚','z':'𝒛'})},
+                { name: "Bridge Above", transform: text => suffixChars(text, '\u0346') },
+                { name: "Bridge Below", transform: text => suffixChars(text, '\u032A') },
+                { name: "Cherokee Lookalikes (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'Ꭰ','b':'Ᏼ','c':'Ꮯ','d':'Ꭰ','e':'Ꭼ','f':'Ꮀ','g':'Ꮹ','h':'Ꮋ','i':'Ꭵ','j':'Ꭻ','k':'Ꮶ','l':'Ꮮ','m':'Ꮇ','n':'Ꮐ','o':'Ꮎ','p':'Ꮲ','q':'Ꮖ','r':'Ꭱ','s':'Ꮪ','t':'Ꭲ','u':'Ꭴ','v':'Ꮩ','w':'Ꮃ','x':'Ⅹ','y':'Ꭹ','z':'Ꮓ'})},
+                { name: "Circled", transform: text => text.split('').map(c=>{const l="abcdefghijklmnopqrstuvwxyz",u="ABCDEFGHIJKLMNOPQRSTUVWXYZ",d="0123456789"; if(l.includes(c))return String.fromCodePoint(0x24D0+l.indexOf(c));if(u.includes(c))return String.fromCodePoint(0x24B6+u.indexOf(c));if(d.includes(c)){const cd=['⓪','①','②','③','④','⑤','⑥','⑦','⑧','⑨'];return cd[parseInt(c)];}return c;}).join('')},
+                { name: "Circumflex Above", transform: text => suffixChars(text, '\u0302') },
+                { name: "Comet Trail", transform: text => suffixChars(text, '☄') },
+                { name: "Coptic Lookalikes (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'ⲁ','b':'ⲃ','c':'ⲥ','d':'ⲇ','e':'ⲉ','f':'ϥ','g':'ⲅ','h':'ϩ','i':'ⲓ','j':'ϫ','k':'ⲕ','l':'ⲗ','m':'ⲙ','n':'ⲛ','o':'ⲟ','p':'ⲡ','q':'ϭ','r':'ⲣ','s':'ⲥ','t':'ⲧ','u':'ⲟⲩ','v':'ⲩ','w':'ⲟⲩ','x':'ⲝ','y':'ⲯ','z':'ⲍ'})},
+                { name: "Cyrillic Homoglyphs", transform: text => mapChars(text, {'A':'А','B':'В','C':'С','E':'Е','H':'Н','I':'І','K':'К','M':'М','O':'О','P':'Р','S':'Ѕ','T':'Т','X':'Х','Y':'У','a':'а','c':'с','e':'е','i':'і','o':'о','p':'р','s':'ѕ','x':'х','y':'у'})},
+                { name: "Digital Display", transform: text => mapChars(text.toUpperCase(), {'A':'Λ','B':'8','C':'[','D':'|)','E':'3','F':'|=','G':'6','H':'#','I':'|','J':'_|','K':'|<','L':'|_','M':'|\\/|','N':'|\\|','O':'0','P':'|D','Q':'(,)','R':'|Я','S':'5','T':'7','U':'|_|','V':'\\/','W':'\\/\\/','X':'><','Y':'Ч','Z':'2','0':'0','1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9'})},
+                { name: "Dot Below", transform: text => suffixChars(text, '\u0323') },
+                { name: "Dots Above", transform: text => suffixChars(text, '\u0307') },
+                { name: "Double Strikethrough", transform: text => suffixChars(text, '\u0336\u0336') },
+                { name: "Double Struck", transform: text => mapChars(text, {'A':'𝔸','B':'𝔹','C':'ℂ','D':'𝔻','E':'𝔼','F':'𝔽','G':'𝔾','H':'ℍ','I':'𝕀','J':'𝕁','K':'𝕂','L':'𝕃','M':'𝕄','N':'ℕ','O':'𝕆','P':'ℙ','Q':'ℚ','R':'ℝ','S':'𝕊','T':'𝕋','U':'𝕌','V':'𝕍','W':'𝕎','X':'𝕏','Y':'𝕐','Z':'ℤ','a':'𝕒','b':'𝕓','c':'𝕔','d':'𝕕','e':'𝕖','f':'𝕗','g':'𝕘','h':'𝕙','i':'𝕚','j':'𝕛','k':'𝕜','l':'𝕝','m':'𝕞','n':'𝕟','o':'𝕠','p':'𝕡','q':'𝕢','r':'𝕣','s':'𝕤','t':'𝕥','u':'𝕦','v':'𝕧','w':'𝕨','x':'𝕩','y':'𝕪','z':'𝕫','0':'𝟘','1':'𝟙','2':'𝟚','3':'𝟛','4':'𝟜','5':'𝟝','6':'𝟞','7':'𝟟','8':'𝟠','9':'𝟡'})},
+                { name: "Double Underline", transform: text => suffixChars(text, '\u0333') },
+                { name: "Egyptian Hieroglyphs (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'𓄿','b':'𓃀','c':'𓎡','d':'𓂧','e':'𓇋','f':'𓆑','g':'𓎼','h':'𓉔','i':'𓇋','j':'𓆓','k':'𓎡','l':'𓃭','m':'𓅓','n':'𓈖','o':'𓅱','p':'𓊪','q':'𓈎','r':'𓂋','s':'𓋴','t':'𓏏','u':'𓅱','v':'𓆑','w':'𓅱','x':'𓐍','y':'𓇋','z':'𓊃'})},
+                { name: "Emoji Face Replace", transform: text => mapChars(text.toLowerCase(), {'a':'😀','b':'😎','c':'😂','d':'😉','e':'😋','f':'😘','g':'😬','h':'🤗','i':'🤔','j':'🤓','k':'😜','l':'🤩','m':'🤯','n':'😴','o':'😮','p':'🥳','q':'🤪','r':'🥰','s':'🤫','t':'😮‍💨','u':'🙃','v':'🤑','w':'🥴','x':'🤢','y':'🥳','z':'🤐'})},
+                { name: "Floral Decor", transform: text => intersperseChars(text, '✾') },
+                { name: "Fraktur (Math)", transform: text => mapChars(text, {'A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝔒','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ','a':'𝔞','b':'𝔟','c':'𝔠','d':'𝔡','e':'𝔢','f':'𝔣','g':'𝔤','h':'𝔥','i':'𝔦','j':'𝔧','k':'𝔨','l':'𝔩','m':'𝔪','n':'𝔫','o':'𝔬','p':'𝔭','q':'𝔮','r':'𝔯','s':'𝔰','t':'𝔱','u':'𝔲','v':'𝔳','w':'𝔴','x':'𝔵','y':'𝔶','z':'𝔷'})},
+                { name: "Fullwidth", transform: text => text.split('').map(c=>{const co=c.charCodeAt(0);if(co>=0x0021&&co<=0x007E){return String.fromCharCode(co+0xFEE0);}else if(co===0x0020){return '\u3000';}return c;}).join('')},
+                { name: "Georgian Lookalikes (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'ა','b':'ბ','c':'ც','d':'დ','e':'ე','f':'ფ','g':'გ','h':'ჰ','i':'ი','j':'ჯ','k':'კ','l':'ლ','m':'მ','n':'ნ','o':'ო','p':'პ','q':'ქ','r':'რ','s':'ს','t':'ტ','u':'უ','v':'ვ','w':'წ','x':'ხ','y':'ყ','z':'ზ'})},
+                { name: "Gothic Letters (Old Style)", transform: text => mapChars(text, {'A':'𝕬','B':'𝕭','C':'𝕮','D':'𝕯','E':'𝕰','F':'𝕱','G':'𝕲','H':'𝕳','I':'𝕴','J':'𝕵','K':'𝕶','L':'𝕷','M':'𝕸','N':'𝕹','O':'𝕺','P':'𝕻','Q':'𝕼','R':'𝕽','S':'𝕾','T':'𝕿','U':'𝖀','V':'𝖁','W':'𝖂','X':'𝖃','Y':'𝖄','Z':'𝖅', 'a':'𝖆','b':'𝖇','c':'𝖈','d':'𝖉','e':'𝖊','f':'𝖋','g':'𝖌','h':'𝖍','i':'𝖎','j':'𝖏','k':'𝖐','l':'𝖑','m':'𝖒','n':'𝖓','o':'𝖔','p':'𝖕','q':'𝖖','r':'𝖗','s':'𝖘','t':'𝖙','u':'𝖚','v':'𝖛','w':'𝖜','x':'𝖝','y':'𝖞','z':'𝖟'})},
+                { name: "Grave Above", transform: text => suffixChars(text, '\u0300') },
+                { name: "Greco-Cyrillic Blend", transform: text => mapChars(text, {'A':'А','B':'В','E':'Е','H':'Н','I':'І','K':'К','M':'М','N':'И','O':'О','P':'Р','S':'Ѕ','T':'Т','X':'Х','Y':'У','a':'а','b':'в','e':'е','h':'н','i':'і','k':'к','m':'м','n':'и','o':'о','p':'р','s':'ѕ','t':'т','x':'х','y':'у'})},
+                { name: "Greek Homoglyphs", transform: text => mapChars(text, {'A':'Α','B':'Β','E':'Ε','Z':'Ζ','H':'Η','I':'Ι','K':'Κ','M':'Μ','N':'Ν','O':'Ο','P':'Ρ','T':'Τ','X':'Χ','Y':'Υ','a':'α','b':'β','e':'ε','g':'γ','i':'ι','k':'κ','n':'ν','o':'ο','p':'ρ','r':'г','s':'ς','t':'τ','u':'υ','v':'ν','x':'χ','y':'γ'})},
+                { name: "Hearts Between", transform: text => intersperseChars(text, '♥') },
+                { name: "Hook Above", transform: text => suffixChars(text, '\u0309') },
+                { name: "Italic (Math)", transform: text => mapChars(text, {'A':'𝐴','B':'𝐵','C':'𝐶','D':'𝐷','E':'𝐸','F':'𝐹','G':'𝐺','H':'𝐻','I':'𝐼','J':'𝐽','K':'𝐾','L':'𝐿','M':'𝑀','N':'𝑁','O':'𝑂','P':'𝑃','Q':'𝑄','R':'𝑅','S':'𝑆','T':'𝑇','U':'𝑈','V':'𝑉','W':'𝑊','X':'𝑋','Y':'𝑌','Z':'𝑍','a':'𝑎','b':'𝑏','c':'𝑐','d':'𝑑','e':'𝑒','f':'𝑓','g':'𝑔','h':'ℎ','i':'𝑖','j':'𝑗','k':'𝑘','l':'𝑙','m':'𝑚','n':'𝑛','o':'𝑜','p':'𝑝','q':'𝑞','r':'𝑟','s':'𝑠','t':'𝑡','u':'𝑢','v':'𝑣','w':'𝑤','x':'𝑥','y':'𝑦','z':'𝑧'})},
+                { name: "Katakana Lookalikes", transform: text => mapChars(text.toUpperCase(), {'A':'ア','B':'Б','C':'ㄷ','D':'ㅁ','E':'乇','F':'ｷ','G':'ム','H':'卄','I':'ﾉ','J':'ﾌ','K':'ズ','L':'ﾚ','M':'从','N':'ん','O':'ロ','P':'ㄗ','Q':'ዒ','R':'尺','S':'丂','T':'丁','U':'Џ','V':'∨','W':'山','X':'乂','Y':'ﾘ','Z':'乙'})},
+                { name: "Left Half Ring Below", transform: text => suffixChars(text, '\u031C') },
+                { name: "Lightning Bolts", transform: text => intersperseChars(text, '⚡') },
+                { name: "Lines Above", transform: text => suffixChars(text, '\u0305') },
+                { name: "Math Sans", transform: text => mapChars(text, {'A':'𝖠','B':'𝖡','C':'𝖢','D':'𝖣','E':'𝖤','F':'𝖥','G':'𝖦','H':'𝖧','I':'𝖨','J':'𝖩','K':'𝖪','L':'𝖫','M':'𝖬','N':'𝖭','O':'𝖮','P':'𝖯','Q':'𝖰','R':'𝖱','S':'𝖲','T':'𝖳','U':'𝖴','V':'𝖵','W':'𝖶','X':'𝖷','Y':'𝖸','Z':'𝖹','a':'𝖺','b':'𝖻','c':'𝖼','d':'𝖽','e':'𝖾','f':'𝖿','g':'𝗀','h':'𝗁','i':'𝗂','j':'𝗃','k':'𝗄','l':'𝗅','m':'𝗆','n':'𝗇','o':'𝗈','p':'𝗉','q':'𝗊','r':'𝗋','s':'𝗌','t':'𝗍','u':'𝗎','v':'𝗏','w':'𝗐','x':'𝗑','y':'𝗒','z':'𝗓','0':'𝟢','1':'𝟣','2':'𝟤','3':'𝟥','4':'𝟦','5':'𝟧','6':'𝟨','7':'𝟩','8':'𝟪','9':'𝟫'})},
+                { name: "Math Sans Bold", transform: text => mapChars(text, {'A':'𝗔','B':'𝗕','C':'𝗖','D':'𝗗','E':'𝗘','F':'𝗙','G':'𝗚','H':'𝗛','I':'𝗜','J':'𝗝','K':'𝗞','L':'𝗟','M':'𝗠','N':'𝗡','O':'𝗢','P':'𝗣','Q':'𝗤','R':'𝗥','S':'𝗦','T':'𝗧','U':'𝗨','V':'𝗩','W':'𝗪','X':'𝗫','Y':'𝗬','Z':'𝗭','a':'𝗮','b':'𝗯','c':'𝗰','d':'𝗱','e':'𝗲','f':'𝗳','g':'𝗴','h':'𝗵','i':'𝗶','j':'𝗷','k':'𝗸','l':'𝗹','m':'𝗺','n':'𝗻','o':'𝗼','p':'𝗽','q':'𝗾','r':'𝗿','s':'𝘀','t':'𝘁','u':'𝘂','v':'𝘃','w':'𝘄','x':'𝘅','y':'𝘆','z':'𝘇','0':'𝟬','1':'𝟭','2':'𝟮','3':'𝟯','4':'𝟰','5':'𝟱','6':'𝟲','7':'𝟳','8':'𝟴','9':'𝟵'})},
+                { name: "Math Sans Bold Italic", transform: text => mapChars(text, {'A':'𝘼','B':'𝘽','C':'𝘾','D':'𝘿','E':'𝙀','F':'𝙁','G':'𝙂','H':'𝙃','I':'𝙄','J':'𝙅','K':'𝙆','L':'𝙇','M':'𝙈','N':'𝙉','O':'𝙊','P':'𝙋','Q':'𝙌','R':'𝙍','S':'𝙎','T':'𝙏','U':'𝙐','V':'𝙑','W':'𝙒','X':'𝙓','Y':'𝙔','Z':'𝙕','a':'𝙖','b':'𝙗','c':'𝙘','d':'𝙙','e':'𝙚','f':'𝙛','g':'𝙜','h':'𝙝','i':'𝙞','j':'𝙟','k':'𝙠','l':'𝙡','m':'𝙢','n':'𝙣','o':'𝙤','p':'𝙥','q':'𝙦','r':'𝙧','s':'𝙨','t':'𝙩','u':'𝙪','v':'𝙫','w':'𝙬','x':'𝙭','y':'𝙮','z':'𝙯'})},
+                { name: "Math Sans Italic", transform: text => mapChars(text, {'A':'𝘈','B':'𝘉','C':'𝘊','D':'𝘋','E':'𝘌','F':'𝘍','G':'𝘎','H':'𝘏','I':'𝘐','J':'𝘑','K':'𝘒','L':'𝘓','M':'𝘔','N':'𝘕','O':'𝘖','P':'𝘗','Q':'𝘘','R':'𝘙','S':'𝘚','T':'𝘛','U':'𝘜','V':'𝘝','W':'𝘞','X':'𝘟','Y':'𝘠','Z':'𝘡','a':'𝘢','b':'𝘣','c':'𝘤','d':'𝘥','e':'𝘦','f':'𝘧','g':'𝘨','h':'𝘩','i':'𝘪','j':'𝘫','k':'𝘬','l':'𝘭','m':'𝘮','n':'𝘯','o':'𝘰','p':'𝘱','q':'𝘲','r':'𝘳','s':'𝘴','t':'𝘵','u':'𝘶','v':'𝘷','w':'𝘸','x':'𝘹','y':'𝘺','z':'𝘻'})},
+                { name: "Matrix Code (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'ア','b':'イ','c':'ウ','d':'エ','e':'オ','f':'カ','g':'キ','h':'ク','i':'ケ','j':'コ','k':'サ','l':'シ','m':'ス','n':'セ','o':'ソ','p':'タ','q':'チ','r':'ツ','s':'テ','t':'ト','u':'ナ','v':'ニ','w':'ヌ','x':'ネ','y':'ノ','z':'ハ', '0':'０','1':'１','2':'２','3':'３','4':'４','5':'５','6':'６','7':'７','8':'８','9':'９'})},
+                { name: "Mirrored (Partial)", transform: text => {const m={'a':'ɒ','b':'d','c':'ɔ','d':'b','e':'ɘ','f':'Ꮈ','g':'ǫ','h':'μ','i':'i','j':'į','k':'ʞ','l':'l','m':'m','n':'u','o':'o','p':'q','q':'p','r':'ɿ','s':'ƨ','t':'ƚ','u':'n','v':'v','w':'w','x':'x','y':'γ','z':'ƹ','A':'A','B':'ᙠ','C':'Ɔ','D':'ᗡ','E':'Ǝ','F':'ꟻ','G':'Ꭾ','H':'H','I':'I','J':'Ⴑ','K':'ꓘ','L':'⅃','M':'M','N':'И','O':'O','P':'ꟼ','Q':'Ọ','R':'Я','S':'Ƨ','T':'T','U':'U','V':'V','W':'W','X':'X','Y':'Y','Z':'Ƹ','1':'Ɩ','2':'S','3':'Ɛ','4':'h','5':'ટ','6':'9','7':'ㄥ','8':'8','9':'6','0':'0'};return text.split('').map(c=>m[c]||c).join('');}},
+                { name: "Monospace (Math)", transform: text => mapChars(text, {'A':'𝙰','B':'𝙱','C':'𝙲','D':'𝙳','E':'𝙴','F':'𝙵','G':'𝙶','H':'𝙷','I':'𝙸','J':'𝙹','K':'𝙺','L':'𝙻','M':'𝙼','N':'𝙽','O':'𝙾','P':'𝙿','Q':'𝚀','R':'𝚁','S':'𝚂','T':'𝚃','U':'𝚄','V':'𝚅','W':'𝚆','X':'𝚇','Y':'𝚈','Z':'𝚉','a':'𝚊','b':'𝚋','c':'𝚌','d':'𝚍','e':'𝚎','f':'𝚏','g':'𝚐','h':'𝚑','i':'𝚒','j':'𝚓','k':'𝚔','l':'𝚕','m':'𝚖','n':'𝚗','o':'𝚘','p':'𝚙','q':'𝚚','r':'𝚛','s':'𝚜','t':'𝚝','u':'𝚞','v':'𝚟','w':'𝚠','x':'𝚡','y':'𝚢','z':'𝚣','0':'𝟶','1':'𝟷','2':'𝟸','3':'𝟹','4':'𝟺','5':'𝟻','6':'𝟼','7':'𝟽','8':'𝟾','9':'𝟿'})},
+                { name: "Music Medley", transform: text => { const notes = ['♩', '♪', '♫', '♬']; let i = 0; return text.split('').map(c => c === ' ' ? ' ' : c + notes[i++ % notes.length]).join(''); }},
+                { name: "Negative Circled", transform: text => text.toUpperCase().split('').map(c=>{const co=c.charCodeAt(0);if(co>=65&&co<=90){return String.fromCodePoint(0x1F150+(co-65));}return c;}).join('')},
+                { name: "Negative Squared", transform: text => text.toUpperCase().split('').map(c=>{const co=c.charCodeAt(0);if(co>=65&&co<=90){return String.fromCodePoint(0x1F170+(co-65));}return c;}).join('')},
+                { name: "Old Italic (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'𐌀','b':'𐌁','c':'𐌂','d':'𐌃','e':'𐌄','f':'𐌅','g':'𐌆','h':'𐌇','i':'𐌉','k':'𐌊','l':'𐌋','m':'𐌌','n':'𐌍','o':'𐌏','p':'𐌐','q':'𐌒','r':'𐌓','s':'𐌔','t':'𐌕','u':'𐌖','v':'𐌖','w':'𐌖𐌖','x':'𐌗','y':'𐌘','z':'𐌆'})},
+                { name: "Parenthesized (Full)", transform: text => mapChars(text, {'A':'🄐','B':'🄑','C':'🄒','D':'🄓','E':'🄔','F':'🄕','G':'🄖','H':'🄗','I':'🄘','J':'🄙','K':'🄚','L':'🄛','M':'🄜','N':'🄝','O':'🄞','P':'🄟','Q':'🄠','R':'🄡','S':'🄢','T':'🄣','U':'🄤','V':'🄥','W':'🄦','X':'🄧','Y':'🄨','Z':'🄩','a':'⒜','b':'⒝','c':'⒞','d':'⒟','e':'⒠','f':'⒡','g':'⒢','h':'⒣','i':'⒤','j':'⒥','k':'⒦','l':'⒧','m':'⒨','n':'⒩','o':'⒪','p':'⒫','q':'⒬','r':'⒭','s':'⒮','t':'⒯','u':'⒰','v':'⒱','w':'⒲','x':'⒳','y':'⒴','z':'⒵'})},
+                { name: "Parenthesized Lower", transform: text => text.toLowerCase().split('').map(c=>{const co=c.charCodeAt(0);if(co>=97&&co<=122){return String.fromCodePoint(0x249C+(co-97));}return c;}).join('')},
+                { name: "Plus Below", transform: text => suffixChars(text, '\u031F') },
+                { name: "Runic (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'ᚨ','b':'ᛒ','c':'ᚲ','d':'ᛞ','e':'ᛖ','f':'ᚠ','g':'ᚷ','h':'ᚺ','i':'ᛁ','j':'ᛃ','k':'ᚴ','l':'ᛚ','m':'ᛗ','n':'ᚾ','o':'ᛟ','p':'ᛈ','q':'ᛩ','r':'ᚱ','s':'ᛊ','t':'ᛏ','u':'ᚢ','v':'ᚡ','w':'ᚹ','x':'ᛪ','y':'ᛦ','z':'ᛎ'}) },
+                { name: "Script (Math)", transform: text => mapChars(text, {'A':'𝒜','B':'ℬ','C':'𝒞','D':'𝒟','E':'ℰ','F':'ℱ','G':'𝒢','H':'ℋ','I':'ℐ','J':'𝒥','K':'𝒦','L':'ℒ','M':'ℳ','N':'𝒩','O':'𝒪','P':'𝒫','Q':'𝒬','R':'ℛ','S':'𝒮','T':'𝒯','U':'𝒰','V':'𝒱','W':'𝒲','X':'𝒳','Y':'𝒴','Z':'𝒵','a':'𝒶','b':'𝒷','c':'𝒸','d':'𝒹','e':'ℯ','f':'𝒻','g':'ℊ','h':'𝒽','i':'𝒾','j':'𝒿','k':'𝓀','l':'𝓁','m':'𝓂','n':'𝓃','o':'ℴ','p':'𝓅','q':'𝓆','r':'𝓇','s':'𝓈','t':'𝓉','u':'𝓊','v':'𝓋','w':'𝓌','x':'𝓍','y':'𝓎','z':'𝓏'})},
+                { name: "Seagull Below", transform: text => suffixChars(text, '\u033C') },
+                { name: "Short Stroke Overlay", transform: text => suffixChars(text, '\u0335') },
+                { name: "Slash Through", transform: text => suffixChars(text, '\u0338') },
+                { name: "Small Caps", transform: text => mapChars(text.toLowerCase(), {'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ꜰ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'})},
+                { name: "Sparkle Border", transform: text => prefixSuffixAll(text, '✨ ', ' ✨') },
+                { name: "Squared Latin", transform: text => text.toUpperCase().split('').map(c=>{const co=c.charCodeAt(0);if(co>=65&&co<=90){return String.fromCodePoint(0x1F130+(co-65));}return c;}).join('')},
+                { name: "Squares Between", transform: text => intersperseChars(text, '■') },
+                { name: "Stars Between", transform: text => intersperseChars(text, '★') },
+                { name: "Strikethrough", transform: text => suffixChars(text, '\u0336') },
+                { name: "Techno Display", transform: text => mapChars(text.toUpperCase(), {'A':'Д','B':'Б','C':'C','D':'D','E':'Ξ','F':'F','G':'G','H':'H','I':'|','J':'J','K':'K','L':'L','M':'M','N':'И','O':'Ө','P':'P','Q':'Q','R':'Я','S':'S','T':'T','U':'Ц','V':'V','W':'W','X':'X','Y':'Y','Z':'Z','0':'0','1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9'}) },
+                { name: "Thai Lookalikes (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'ล','b':'ß','c':'¢','d':'∂','e':'乇','f':'ｷ','g':'ﻭ','h':'ｻ','i':'เ','j':'ﾌ','k':'к','l':'ℓ','m':'๓','n':'η','o':'๏','p':'ק','q':'۹','r':'г','s':'ร','t':'т','u':'ย','v':'ש','w':'ฬ','x':'א','y':'ץ','z':'ż'})},
+                { name: "Tilde Below", transform: text => suffixChars(text, '\u0330') },
+                { name: "Underline", transform: text => suffixChars(text, '\u0332') },
+                { name: "Upside Down", transform: text => { const m = {'a':'ɐ','b':'q','c':'ɔ','d':'p','e':'ǝ','f':'ɟ','g':'ƃ','h':'ɥ','i':'ᴉ','j':'ɾ','k':'ʞ','l':'l','m':'ɯ','n':'u','o':'o','p':'d','q':'b','r':'ɹ','s':'s','t':'ʇ','u':'n','v':'ʌ','w':'ʍ','x':'x','y':'ʎ','z':'z','A':'∀','B':'𐐒','C':'Ɔ','D':'ᗡ','E':'Ǝ','F':'Ⅎ','G':'פ','H':'H','I':'I','J':'ſ','K':'ʞ','L':'˥','M':'W','N':'N','O':'O','P':'Ԁ','Q':'Q','R':'R','S':'S','T':'┴','U':'∩','V':'Λ','W':'M','X':'X','Y':'⅄','Z':'Z','0':'0','1':'Ɩ','2':'ᄅ','3':'Ɛ','4':'ㄣ','5':'ϛ','6':'9','7':'ㄥ','8':'8','9':'6','.':'˙',',':'\'','\'':',','"':'„','`':'‘','?':'¿','!':'¡','(':'(',')':')','[':']',']':'[','{':'}','}':'{','_':'‾','&':'⅋','<':'>','>':'<'}; return text.split('').map(c=>m[c]||c).reverse().join(''); }},
+                { name: "Walled Text", transform: text => prefixSuffixChars(text, '[', ']') },
+                { name: "Widetilde Overlay", transform: text => suffixChars(text, '\u0303') },
+                { name: "Wiggly Lines", transform: text => suffixChars(text, '\u033F\u033F') },
+                { name: "Wingdings (Faux)", transform: text => mapChars(text.toLowerCase(), {'a':'♋︎','b':'♌︎','c':'♍︎','d':'♎︎','e':'♏︎','f':'♐︎','g':'♑︎','h':'♒︎','i':'♓︎','j':'✈︎','k':'✏︎','l':'︎✂︎','m':'︎☎︎','n':'☔︎','o':'☕︎','p':'☝︎','q':'︎☠︎','r':'︎☢︎','s':'︎☣︎','t':'︎☮︎','u':'︎☯︎','v':'︎☹︎','w':'︎☺︎','x':'︎♀︎','y':'︎♂︎','z':'︎⚕︎'})},
+                { name: "X Above", transform: text => suffixChars(text, '\u033D') },
+                { name: "Zalgo (Down)", transform: text => zalgo(text, 0, 0, 5) },
+                { name: "Zalgo (Mini)", transform: text => zalgo(text, 1, 1, 1) },
+                { name: "Zalgo (Up)", transform: text => zalgo(text, 5, 0, 0) },
+                { name: "Zigzag Above", transform: text => suffixChars(text, '\u035B') },
+            ];
+
+            transformations.sort((a, b) => a.name.localeCompare(b.name));
+
+            const transformationCount = transformations.length;
+            if (headerSubtitle) headerSubtitle.textContent = `Instantly transform your text with ${transformationCount}+ cool styles!`;
+            if (footerPromo) footerPromo.textContent = `Discover ${transformationCount}+ unique text styles. Copy and paste fancy fonts for social media, bios, and more.`;
+
+            function applyThemeVisuals(theme) {
+                if(themeIconSun) themeIconSun.style.display = theme === 'dark' ? 'none' : 'inline-block';
+                if(themeIconMoon) themeIconMoon.style.display = theme === 'dark' ? 'inline-block' : 'none';
+            }
+            applyThemeVisuals(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+                    const newTheme = isCurrentlyDark ? 'light' : 'dark';
+                    localStorage.setItem('theme', newTheme);
+                    document.documentElement.classList.toggle('dark', !isCurrentlyDark);
+                    applyThemeVisuals(newTheme);
+                });
+            }
+            
+            function setupMenuToggle(button, menu) {
+                if (!button || !menu) return;
+                button.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const isCurrentlyHidden = menu.classList.contains('hidden');
+                    if (chrisFooterMenu && menu !== chrisFooterMenu && chrisFooterMenuButton) { 
+                         chrisFooterMenu.classList.add('hidden');
+                         chrisFooterMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                    
+                    menu.classList.toggle('hidden', !isCurrentlyHidden);
+                    button.setAttribute('aria-expanded', String(isCurrentlyHidden));
+                });
+            }
+            setupMenuToggle(chrisFooterMenuButton, chrisFooterMenu);
+
+            document.addEventListener('click', (event) => {
+                if (chrisFooterMenu && !chrisFooterMenu.classList.contains('hidden') && !chrisFooterMenu.contains(event.target) && chrisFooterMenuButton && !chrisFooterMenuButton.contains(event.target)) {
+                    chrisFooterMenu.classList.add('hidden');
+                    chrisFooterMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            const headerElement = document.querySelector('header');
+            const headerHeightPx = headerElement ? headerElement.offsetHeight : 80; 
+
+            const observer = new IntersectionObserver(
+                ([e]) => {
+                    const isStuck = e.intersectionRatio < 1;
+                    inputSectionContainer.classList.toggle('sticky-input-active', isStuck);
+                    textInput.rows = isStuck ? 1 : 3;
+                },
+                { threshold: [1], rootMargin: `-${headerHeightPx}px 0px 0px 0px` }
+            );
+            if(inputSectionContainer) observer.observe(inputSectionContainer);
+
+
+            function renderOutputBlocks(inputValue) {
+                if (!outputGrid || !outputHeaderControls || !copyAllContainer) { console.error("Required UI elements not found!"); return; }
+                outputGrid.innerHTML = ''; 
+
+                if (inputValue.trim() === '') {
+                    outputHeaderControls.classList.add('hidden');
+                    copyAllContainer.classList.add('hidden');
+                    const placeholder = document.createElement('p');
+                    placeholder.textContent = 'Type text above to see styled versions here... 🪄';
+                    placeholder.className = 'sm:col-span-2 lg:col-span-3 text-center text-slate-500 dark:text-slate-400 py-10 text-base';
+                    outputGrid.appendChild(placeholder);
+                    return;
+                }
+                
+                outputHeaderControls.classList.remove('hidden');
+                copyAllContainer.classList.remove('hidden');
+
+                transformations.forEach((item, index) => {
+                    try {
+                        const transformed = item.transform(inputValue);
+                        const row = document.createElement('div');
+                        row.className = 'output-row flex items-center justify-between bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark rounded-lg p-2.5 shadow-sm hover:shadow-md transition-all duration-200 ease-in-out min-h-[52px]';
+
+                        const title = document.createElement('h3');
+                        title.textContent = item.name;
+                        title.className = 'font-heading text-xs sm:text-sm font-semibold text-text-light dark:text-text-dark flex-shrink-0 w-2/5 sm:w-1/3 truncate pr-2';
+
+                        const textDisplay = document.createElement('div');
+                        textDisplay.className = 'transformed-text-row-preview flex-grow overflow-x-auto whitespace-nowrap p-1.5 mx-1.5 bg-row-preview-bg-light dark:bg-row-preview-bg-dark text-row-preview-text-light dark:text-row-preview-text-dark rounded h-8 leading-tight border border-border-light dark:border-border-dark text-sm sm:text-base';
+                        textDisplay.textContent = transformed;
+                        textDisplay.setAttribute('aria-label', `Copyable text: ${item.name} style`);
+                        textDisplay.setAttribute('role', 'button');
+                        textDisplay.setAttribute('tabindex', '0');
+
+                        textDisplay.addEventListener('click', () => {
+                            console.log('Attempting to copy:', `"${transformed}" for ${item.name}`); 
+                            if (typeof navigator.clipboard?.writeText === 'function') {
+                                navigator.clipboard.writeText(transformed)
+                                    .then(() => showToast(`${item.name} style copied!`))
+                                    .catch(err => {
+                                        console.error(`Copy failed for "${item.name}": `, err);
+                                        showToast(`Copy failed! (See console)`, true);
+                                    });
+                            } else {
+                                showToast('Copy API unavailable (try hosting file).', true);
+                            }
+                        });
+                        textDisplay.addEventListener('keypress', (e) => {
+                            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); textDisplay.click(); }
+                        });
+
+                        row.appendChild(title);
+                        row.appendChild(textDisplay);
+                        outputGrid.appendChild(row);
+
+                    } catch (error) {
+                        console.error(`Error processing transformation "${item.name}" (index ${index}):`, error);
+                        const errorRow = document.createElement('div');
+                        errorRow.className = 'output-row flex items-center justify-start bg-red-100 dark:bg-red-800 border border-red-300 dark:border-red-600 rounded-lg p-2.5 shadow-sm min-h-[52px]';
+                        errorRow.innerHTML = `<h3 class="font-heading text-xs sm:text-sm font-semibold text-red-700 dark:text-red-300 w-2/5 sm:w-1/3 truncate pr-2">${item.name}</h3> <p class="flex-grow text-red-600 dark:text-red-400 text-xs px-2">Error generating style.</p>`;
+                        if (outputGrid) { outputGrid.appendChild(errorRow); }
+                    }
+                });
+            }
+
+            if (copyAllButton) {
+                copyAllButton.addEventListener('click', () => {
+                    const inputValue = textInput.value;
+                    if (inputValue.trim() === '') {
+                        showToast('Nothing to copy yet!', true);
+                        return;
+                    }
+                    let allTextArray = [];
+                    transformations.forEach(item => {
+                        try {
+                            allTextArray.push(item.transform(inputValue));
+                        } catch (e) { /* Skip errors in "copy all" */ }
+                    });
+                    const allText = allTextArray.join('\n');
+                    console.log('Attempting to copy all:', `"${allText}"`);
+
+                    if (typeof navigator.clipboard?.writeText === 'function') {
+                        navigator.clipboard.writeText(allText)
+                            .then(() => showToast('All transformed texts copied!'))
+                            .catch(err => {
+                                console.error('Failed to copy all: ', err);
+                                showToast('Oops! Could not copy all texts. (See console)', true);
+                            });
+                    } else {
+                        showToast('Copy API unavailable (try hosting file).', true);
+                    }
+                });
+            }
+
+            let toastTimeout;
+            function showToast(message, isError = false) {
+                if (!toastNotification) return;
+                toastNotification.textContent = message;
+                toastNotification.className = `fixed bottom-6 right-6 p-3.5 text-white rounded-lg shadow-2xl opacity-0 transform translate-y-4 transition-all duration-300 ease-out pointer-events-none text-sm font-medium ${isError ? 'bg-red-600 dark:bg-red-500' : 'bg-secondary-light dark:bg-secondary-dark'}`;
+                requestAnimationFrame(() => {
+                    toastNotification.classList.remove('opacity-0', 'translate-y-4');
+                });
+                
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toastNotification.classList.add('opacity-0', 'translate-y-4');
+                }, 3000);
+            }
+
+            if (textInput) {
+                textInput.addEventListener('input', (e) => { renderOutputBlocks(e.target.value); });
+                renderOutputBlocks(textInput.value || ""); 
+            } else {
+                console.error("Text input element (#text-input) not found!");
+                if (outputGrid) { renderOutputBlocks(""); }
+            }
+        });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQ4D3VQ3L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1CQ4D3VQ3L');
+    </script>
+</body>
+</html>
