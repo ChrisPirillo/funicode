@@ -7,4 +7,6 @@ fUNICODE by @ChrisPirillo: Instantly transform your text with 70+ unique Unicode
 
 ![Screenshot](https://github.com/ChrisPirillo/funicode/blob/main/assets/screenshot.png?raw=true)
 
+![Screenshot](https://raw.githubusercontent.com/ChrisPirillo/funicode/main/assets/screenshot.png)
+
 * Try it now: [https://pirillo.com/arcade/funicode.html](https://pirillo.com/arcade/funicode.html)
